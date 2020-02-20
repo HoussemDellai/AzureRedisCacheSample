@@ -14,7 +14,11 @@ namespace AzureRedisCacheConsoleDemo
 
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            IDatabase cache = Connection.GetDatabase();
+
+            cache.StringSet("houssem-key1", "J'aime Dakar :)");
+            
+            var value1 = cache.StringGet("houssem-key1");
         }
     }
 }
